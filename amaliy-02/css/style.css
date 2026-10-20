@@ -1,0 +1,834 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+/* ==========================================================================
+   B1. BLOK MODELI BOSH SOZLAMASI (Reset va Border-box)
+   ========================================================================== */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* ==========================================================================
+   1-AMALIY ISHDAGI RANGLAR VA TIZIM O'ZGARUVCHILARI (:root)
+   ========================================================================== */
+:root {
+    --asosiy-rang: #0f172a;        /* To'q ko'k-kulrang (Obsidian) */
+    --ikkilamchi-rang: #2563eb;     /* Moviy rang (Royal Blue) */
+    --aktsent-rang: #ff7a00;        /* Jonli apelsin/tulki rangi (Foxy Orange) */
+    --aktsent-hover: #e06900;       /* Aktsentning to'qroq holati */
+    --fon-oq: #ffffff;             /* Sof oq */
+    --och-fon: rgb(248, 250, 252);  /* Yengil kulrang fon */
+    --och-kulrang: #f1f5f9;         /* Kartalar va jadvallar uchun fon */
+    --chegara-rangi: rgba(15, 23, 42, 0.12); /* Nozik chegara chizig'i */
+    --matn-asosiy: #1e293b;         /* O'qishga qulay to'q matn */
+    --matn-ikkinchi: #64748b;       /* Izohlar uchun nimrang matn */
+    --iqtibos-fon: rgba(37, 99, 235, 0.06);  /* Iqtibos foni */
+    --soya-kartalar: 0 4px 18px rgba(15, 23, 42, 0.08); /* Kartalar soyasi */
+    --soya-kuchli: 0 8px 24px rgba(15, 23, 42, 0.15);   /* Hover holatidagi soya */
+}
+
+/* ==========================================================================
+   ASOSIY ELEMENTLAR VA MATN USLUBLARI
+   ========================================================================== */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    background-color: var(--och-fon);
+    color: var(--matn-asosiy);
+    margin: 0;
+    padding: 0;
+}
+
+/* ==========================================================================
+   B5 & B8. NAVIGATSIYA VA SARLAVHA (Sticky + Flexbox)
+   ========================================================================== */
+header {
+    background-color: var(--asosiy-rang);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.bosh-navigatsiya {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 14px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.loyiha-logotip {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--fon-oq);
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.loyiha-logotip span {
+    color: var(--aktsent-rang);
+}
+
+.menyu-royxati {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.menyu-royxati a {
+    color: var(--fon-oq);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.menyu-royxati a:hover {
+    background-color: var(--aktsent-rang);
+    color: var(--fon-oq);
+}
+
+.menyu-royxati a.faol-sahifa {
+    background-color: var(--ikkilamchi-rang);
+    color: var(--fon-oq);
+}
+
+.nav-ariza-tugma {
+    background-color: var(--aktsent-rang) !important;
+    color: var(--fon-oq) !important;
+}
+
+.nav-ariza-tugma:hover {
+    background-color: var(--aktsent-hover) !important;
+}
+
+/* ==========================================================================
+   B2. ASOSIY KONTEYNER (max-width + margin: 0 auto + yon padding)
+   ========================================================================== */
+.konteyner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+main.asosiy-kontent {
+    max-width: 1100px;
+    margin: 32px auto;
+    padding: 36px 28px;
+    background-color: var(--fon-oq);
+    border-radius: 12px;
+    box-shadow: var(--soya-kartalar);
+}
+
+/* ==========================================================================
+   TIPOGRAFIYA VA MATN ELEMENTLARI
+   ========================================================================== */
+h1 {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--asosiy-rang);
+    line-height: 1.3;
+    margin-top: 0;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+}
+
+h2 {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--ikkilamchi-rang);
+    margin-top: 36px;
+    margin-bottom: 16px;
+    border-bottom: 2px solid var(--chegara-rangi);
+    padding-bottom: 8px;
+    letter-spacing: -0.3px;
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--asosiy-rang);
+    margin-top: 24px;
+    margin-bottom: 12px;
+}
+
+p {
+    font-size: 16px;
+    text-align: justify;
+    margin-bottom: 16px;
+    line-height: 1.7;
+}
+
+.kirish-matni {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #1e293b;
+    border-left: 4px solid var(--aktsent-rang);
+    padding-left: 16px;
+    margin-bottom: 24px;
+}
+
+.izoh {
+    font-style: italic;
+    color: var(--matn-ikkinchi);
+}
+
+blockquote {
+    background-color: var(--iqtibos-fon);
+    border-left: 5px solid var(--ikkilamchi-rang);
+    margin: 24px 0;
+    padding: 16px 22px;
+    font-size: 17px;
+    font-style: italic;
+    line-height: 1.6;
+    border-radius: 0 8px 8px 0;
+}
+
+mark {
+    background-color: #fef08a;
+    color: #713f12;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+abbr {
+    text-decoration: underline dotted var(--aktsent-rang);
+    cursor: help;
+    font-weight: 600;
+}
+
+sub, sup {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--aktsent-rang);
+}
+
+/* ==========================================================================
+   B4 & B9. FLEXBOX KARTALAR QATORI (flex-wrap va flex: 1 1 280px)
+   ========================================================================== */
+.kartalar-qatori {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin: 24px 0;
+}
+
+/* B3. KARTALAR: padding, border, border-radius, margin */
+/* B4. Kamida bitta qisqa yozuv 2 yoki 4 qiymat bilan: padding: 24px 20px; */
+.karta {
+    background-color: var(--och-kulrang);
+    border: 1px solid var(--chegara-rangi);
+    border-radius: 10px;
+    padding: 24px 20px;
+    margin: 8px 0;
+    flex: 1 1 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.karta:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--soya-kuchli);
+    border-color: var(--ikkilamchi-rang);
+}
+
+/* B6. KARTADAGI BELGI (ota position: relative, belgi position: absolute) */
+.karta-maxsus {
+    position: relative;
+    border: 2px solid var(--aktsent-rang);
+    background-color: #fff9f2;
+}
+
+.karta-belgi {
+    position: absolute;
+    top: -12px;
+    right: 18px;
+    background-color: var(--aktsent-rang);
+    color: var(--fon-oq);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(255, 122, 0, 0.4);
+}
+
+.karta-narx {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--ikkilamchi-rang);
+    margin: 12px 0;
+}
+
+.karta-royxat {
+    list-style-type: none;
+    padding: 0;
+    margin: 14px 0;
+}
+
+.karta-royxat li {
+    padding: 6px 0;
+    border-bottom: 1px dashed rgba(15, 23, 42, 0.1);
+    font-size: 14px;
+}
+
+.karta-royxat li:last-child {
+    border-bottom: none;
+}
+
+/* ==========================================================================
+   B11. FLEXBOX BILAN HAM GORIZONTAL, HAM VERTIKAL MARKAZLASHTIRILGAN ELEMENT
+   ========================================================================== */
+.markaziy-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, var(--asosiy-rang), #1e293b);
+    color: var(--fon-oq);
+    padding: 24px 30px;
+    border-radius: 10px;
+    margin: 28px 0;
+    text-align: center;
+    gap: 16px;
+}
+
+.markaziy-banner p {
+    margin: 0;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.markaziy-banner .aktsent-matn {
+    color: var(--aktsent-rang);
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   A2. ASIDE (Yon Panel / E'lonlar bo'limi)
+   ========================================================================== */
+aside.yon-panel {
+    background-color: rgba(37, 99, 235, 0.05);
+    border-left: 4px solid var(--ikkilamchi-rang);
+    border-radius: 0 8px 8px 0;
+    padding: 20px 24px;
+    margin: 28px 0;
+}
+
+aside.yon-panel h3 {
+    margin-top: 0;
+    color: var(--ikkilamchi-rang);
+}
+
+aside.yon-panel p {
+    margin-bottom: 8px;
+}
+
+/* ==========================================================================
+   A3, A4, A5. JADVAL USLUBLARI (caption, thead, tbody, th, colspan, rowspan)
+   ========================================================================== */
+.jadval-konteyner {
+    width: 100%;
+    overflow-x: auto;
+    margin: 24px 0;
+}
+
+table.reja-jadvali {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--fon-oq);
+    border: 1px solid var(--chegara-rangi);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table.reja-jadvali caption {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--asosiy-rang);
+    text-align: left;
+    padding: 12px 6px;
+    caption-side: top;
+}
+
+table.reja-jadvali thead th {
+    background-color: var(--asosiy-rang);
+    color: var(--fon-oq);
+    font-weight: 600;
+    padding: 14px 16px;
+    text-align: left;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+    border-bottom: 2px solid var(--aktsent-rang);
+}
+
+table.reja-jadvali tbody td,
+table.reja-jadvali tbody th {
+    padding: 12px 16px;
+    border: 1px solid var(--chegara-rangi);
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+table.reja-jadvali tbody th {
+    background-color: var(--och-kulrang);
+    font-weight: 600;
+    color: var(--asosiy-rang);
+}
+
+table.reja-jadvali tbody tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+table.reja-jadvali tbody tr:hover {
+    background-color: #f1f5f9;
+}
+
+.jadval-narx {
+    font-weight: 700;
+    color: var(--aktsent-rang);
+}
+
+.jadval-status-ha {
+    color: #16a34a;
+    font-weight: 700;
+}
+
+.jadval-status-yoq {
+    color: #94a3b8;
+}
+
+/* ==========================================================================
+   A10 & A11. MEDIA (figure + figcaption, video, iframe)
+   ========================================================================== */
+.media-qatori {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 24px 0;
+}
+
+figure.media-blok {
+    flex: 1 1 320px;
+    margin: 0;
+    background-color: var(--och-kulrang);
+    border: 1px solid var(--chegara-rangi);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+figure.media-blok img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+figure.media-blok:hover img {
+    transform: scale(1.02);
+}
+
+figure.media-blok figcaption {
+    padding: 12px 16px;
+    font-size: 13px;
+    color: var(--matn-ikkinchi);
+    background-color: var(--och-kulrang);
+    border-top: 1px solid var(--chegara-rangi);
+    line-height: 1.5;
+}
+
+.video-konteyner, .xarita-konteyner {
+    margin: 24px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--chegara-rangi);
+    background-color: #000;
+}
+
+.xarita-konteyner iframe {
+    width: 100%;
+    height: 340px;
+    border: 0;
+    display: block;
+}
+
+video.video-pleyer {
+    width: 100%;
+    max-height: 420px;
+    display: block;
+    background-color: #000;
+}
+
+/* ==========================================================================
+   A6-A9 & B12. FORMA USLUBLARI (aloqa.html)
+   ========================================================================== */
+form.ariza-formasi {
+    background-color: var(--och-kulrang);
+    border: 1px solid var(--chegara-rangi);
+    border-radius: 10px;
+    padding: 28px 24px;
+    margin: 24px 0;
+}
+
+.forma-tushuntirish {
+    font-size: 15px;
+    color: var(--matn-ikkinchi);
+    margin-bottom: 24px;
+}
+
+/* B12. Formadagi label va maydonlar flex-direction: column va gap bilan tartibli */
+.forma-qatori {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 18px;
+}
+
+.forma-guruh {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1 1 260px;
+    margin-bottom: 16px;
+}
+
+.forma-guruh-toliq {
+    flex: 1 1 100%;
+}
+
+.forma-guruh label {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--asosiy-rang);
+}
+
+.majburiy-belgi {
+    color: #dc2626;
+    margin-left: 2px;
+}
+
+.forma-guruh input[type="text"],
+.forma-guruh input[type="email"],
+.forma-guruh input[type="tel"],
+.forma-guruh input[type="date"],
+.forma-guruh input[type="number"],
+.forma-guruh select,
+.forma-guruh textarea {
+    font-family: inherit;
+    font-size: 15px;
+    padding: 10px 14px;
+    border: 1px solid var(--chegara-rangi);
+    border-radius: 6px;
+    background-color: var(--fon-oq);
+    color: var(--matn-asosiy);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.forma-guruh input:focus,
+.forma-guruh select:focus,
+.forma-guruh textarea:focus {
+    outline: none;
+    border-color: var(--ikkilamchi-rang);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.forma-guruh small.yordamchi-matn {
+    font-size: 12px;
+    color: var(--matn-ikkinchi);
+}
+
+/* Radio va Checkbox maydonlari */
+fieldset.forma-fieldset {
+    border: 1px solid var(--chegara-rangi);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    background-color: var(--fon-oq);
+}
+
+fieldset.forma-fieldset legend {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--ikkilamchi-rang);
+    padding: 0 8px;
+}
+
+.tanlovlar-guruhi {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 8px;
+}
+
+.tanlov-elementi {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.tanlov-elementi input[type="radio"],
+.tanlov-elementi input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: var(--aktsent-rang);
+}
+
+.forma-harakatlar {
+    display: flex;
+    justify-content: flex-end;
+    gap: 14px;
+    margin-top: 24px;
+}
+
+button.forma-tugma {
+    background-color: var(--aktsent-rang);
+    color: var(--fon-oq);
+    border: none;
+    border-radius: 6px;
+    padding: 12px 28px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+    box-shadow: 0 4px 12px rgba(255, 122, 0, 0.25);
+}
+
+button.forma-tugma:hover {
+    background-color: var(--aktsent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 122, 0, 0.35);
+}
+
+button.forma-tozalash-tugma {
+    background-color: transparent;
+    color: var(--matn-ikkinchi);
+    border: 1px solid var(--chegara-rangi);
+    border-radius: 6px;
+    padding: 12px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button.forma-tozalash-tugma:hover {
+    background-color: #e2e8f0;
+    color: var(--asosiy-rang);
+}
+
+/* ==========================================================================
+   B7. «YUQORIGA» TUGMASI (position: fixed)
+   ========================================================================== */
+.yuqoriga-fixed-tugma {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    width: 48px;
+    height: 48px;
+    background-color: var(--aktsent-rang);
+    color: var(--fon-oq);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 700;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    z-index: 999;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.yuqoriga-fixed-tugma:hover {
+    background-color: var(--aktsent-hover);
+    transform: translateY(-4px) scale(1.05);
+    color: var(--fon-oq);
+}
+
+/* ==========================================================================
+   TUGMALAR VA HAVOLALAR
+   ========================================================================== */
+a {
+    color: var(--ikkilamchi-rang);
+    text-decoration: underline;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--aktsent-rang);
+    text-decoration: none;
+}
+
+.tugma-havola {
+    display: inline-block;
+    background-color: var(--ikkilamchi-rang);
+    color: var(--fon-oq);
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.tugma-havola:hover {
+    background-color: var(--aktsent-rang);
+    color: var(--fon-oq);
+    transform: translateY(-2px);
+}
+
+.tashqi-havola {
+    font-weight: 600;
+    color: var(--aktsent-rang);
+}
+
+/* Ro'yxatlar va atamalar */
+.asosiy-royxat, .raqamli-royxat {
+    padding-left: 24px;
+    margin-bottom: 20px;
+}
+
+.asosiy-royxat li, .raqamli-royxat li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+.atamalar-toplami dt {
+    color: var(--asosiy-rang);
+    font-weight: 700;
+    font-size: 16px;
+    margin-top: 16px;
+}
+
+.atamalar-toplami dd {
+    margin-left: 0;
+    padding-left: 14px;
+    border-left: 3px solid var(--aktsent-rang);
+    color: #334155;
+    margin-bottom: 12px;
+}
+
+#aloqa-qismi {
+    background-color: var(--och-kulrang);
+    border: 1px solid var(--chegara-rangi);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-top: 32px;
+}
+
+#aloqa-qismi address {
+    font-style: normal;
+    line-height: 1.9;
+}
+
+#muallif-bolimi {
+    background-color: rgba(255, 122, 0, 0.06);
+    border: 1px dashed var(--aktsent-rang);
+    border-radius: 8px;
+    padding: 22px 24px;
+    margin-top: 32px;
+}
+
+/* ==========================================================================
+   B10. FOOTER (Flexbox bilan kamida 2 ustunli)
+   ========================================================================== */
+footer.sahifa-footeri {
+    background-color: var(--asosiy-rang);
+    color: var(--fon-oq);
+    padding: 40px 0 24px 0;
+    margin-top: 60px;
+    font-size: 14px;
+}
+
+.footer-ichki {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 32px;
+}
+
+.footer-ustun {
+    flex: 1 1 240px;
+}
+
+.footer-ustun h4 {
+    color: var(--aktsent-rang);
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 14px;
+}
+
+.footer-ustun p {
+    color: #cbd5e1;
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.footer-ustun ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-ustun ul li {
+    margin-bottom: 8px;
+}
+
+.footer-ustun ul a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-ustun ul a:hover {
+    color: var(--aktsent-rang);
+    text-decoration: underline;
+}
+
+.footer-pastki {
+    max-width: 1100px;
+    margin: 24px auto 0 auto;
+    padding: 20px 24px 0 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 13px;
+    color: #94a3b8;
+}
+
+.footer-pastki p {
+    margin: 0;
+    color: #94a3b8;
+}

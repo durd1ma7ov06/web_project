@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IELTIX platformasida sinov testiga yozilish, ro'yxatdan o'tish va Urganch markazi bilan bog'lanish arizasi formasi.">
+    <title>IELTIX — Sinov Testiga Yozilish va Aloqa (2-Amaliy ish)</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="yuqoriga">
+
+    <!-- A1 & B5 & B8. Yagona semantik header va sticky flexbox navigatsiya -->
+    <header>
+        <nav class="bosh-navigatsiya">
+            <a href="index.html" class="loyiha-logotip">
+                <strong>IELTIX</strong><span>.AI</span>
+            </a>
+            <ul class="menyu-royxati">
+                <li><a href="index.html">Bosh sahifa</a></li>
+                <li><a href="batafsil.html">Batafsil ma'lumot</a></li>
+                <li><a href="aloqa.html" class="faol-sahifa nav-ariza-tugma">Sinov testiga yozilish &rarr;</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="asosiy-kontent">
+        <h1>IELTIX Platformasida Sinov Testiga Yozilish va Ariza Qoldirish</h1>
+
+        <p class="kirish-matni">
+            Quyidagi formani to'ldirish orqali siz o'zingizning hozirgi ingliz tili darajangizni bepul diagnostika qilish imkoniyatiga ega bo'lasiz. Sun'iy intellekt repetitori <strong>Foxy AI</strong> sizning arizangizni avtomatik qayta ishlab, 15 daqiqa ichida shaxsiy o'quv rejangizni shakllantirib beradi.
+        </p>
+
+        <!-- A2. Section va Article tuzilmasi -->
+        <section id="ariza-formasi-bolimi">
+            <h2>Onlayn Ro'yxatdan O'tish Formasi</h2>
+            <p class="forma-tushuntirish">
+                Iltimos, barcha maydonlarni diqqat bilan to'ldiring. (<span class="majburiy-belgi">*</span> bilan belgilangan maydonlar to'ldirilishi shart).
+            </p>
+
+            <!-- A6, A7, A8, A9, B12. Talablarga to'liq javob beruvchi Forma -->
+            <form action="aloqa.html" method="post" class="ariza-formasi">
+                
+                <!-- 1 & 2-maydonlar: text va email -->
+                <div class="forma-qatori">
+                    <!-- 1-maydon: Text input (required) -->
+                    <div class="forma-guruh">
+                        <label for="talaba-ism">Ism va familiyangiz: <span class="majburiy-belgi">*</span></label>
+                        <input 
+                            type="text" 
+                            id="talaba-ism" 
+                            name="talaba_ism" 
+                            placeholder="Masalan: Azizbek Matyoqubov" 
+                            required>
+                        <small class="yordamchi-matn">Pasport yoki ID kartadagi to'liq ism-sharifingiz</small>
+                    </div>
+
+                    <!-- 2-maydon: Email input (required) -->
+                    <div class="forma-guruh">
+                        <label for="talaba-email">Elektron pochta manzilingiz: <span class="majburiy-belgi">*</span></label>
+                        <input 
+                            type="email" 
+                            id="talaba-email" 
+                            name="talaba_email" 
+                            placeholder="misol@gmail.com" 
+                            required>
+                        <small class="yordamchi-matn">Test natijalari va kirish kodi ushbu pochtaga yuboriladi</small>
+                    </div>
+                </div>
+
+                <!-- 3 & 4-maydonlar: tel va date -->
+                <div class="forma-qatori">
+                    <!-- 3-maydon: Tel input (pattern bilan va required) -->
+                    <div class="forma-guruh">
+                        <label for="talaba-tel">Telefon raqamingiz: <span class="majburiy-belgi">*</span></label>
+                        <input 
+                            type="tel" 
+                            id="talaba-tel" 
+                            name="talaba_tel" 
+                            placeholder="+998901234567" 
+                            pattern="\+998[0-9]{9}" 
+                            title="+998 bilan boshlanib 9 ta raqam bo'lishi shart (masalan, +998901234567)" 
+                            required>
+                        <small class="yordamchi-matn">Format: +998901234567</small>
+                    </div>
+
+                    <!-- 4-maydon: Date input -->
+                    <div class="forma-guruh">
+                        <label for="test-sanasi">Sizga qulay diagnostika test kuni:</label>
+                        <input 
+                            type="date" 
+                            id="test-sanasi" 
+                            name="test_sanasi">
+                        <small class="yordamchi-matn">Sinov testini qaysi kunda topshirishni rejalashtiryapsiz</small>
+                    </div>
+                </div>
+
+                <!-- 5 & 6-maydonlar: number va select -->
+                <div class="forma-qatori">
+                    <!-- 5-maydon: Number input -->
+                    <div class="forma-guruh">
+                        <label for="maqsad-ball">Maqsadingizdagi IELTS / BBM balli (1.0 &mdash; 9.0):</label>
+                        <input 
+                            type="number" 
+                            id="maqsad-ball" 
+                            name="maqsad_ball" 
+                            min="1.0" 
+                            max="9.0" 
+                            step="0.5" 
+                            placeholder="7.5">
+                        <small class="yordamchi-matn">1.0 dan 9.0 gacha bo'lgan oraliqda kiriting</small>
+                    </div>
+
+                    <!-- 6-maydon: Select tanlovi -->
+                    <div class="forma-guruh">
+                        <label for="tarif-tanlovi">Tanlangan o'quv tarifi:</label>
+                        <select id="tarif-tanlovi" name="tarif_tanlovi">
+                            <option value="standart">Standart Reja (150 000 so'm/oy)</option>
+                            <option value="intensiv" selected>Intensiv AI Reja — Tavsiya etiladi (280 000 so'm/oy)</option>
+                            <option value="vip">VIP AI + Shaxsiy Mentor (450 000 so'm/oy)</option>
+                            <option value="bbm">Milliy BBM Imtihon Rejasi (180 000 so'm/oy)</option>
+                        </select>
+                        <small class="yordamchi-matn">Istalgan vaqtda tarifni o'zgartirishingiz mumkin</small>
+                    </div>
+                </div>
+
+                <!-- 7-maydon: Fieldset + Legend ichidagi Radio guruh (A8 talabi) -->
+                <fieldset class="forma-fieldset">
+                    <legend>Imtihon Yo'nalishi va Formatini Tanlang <span class="majburiy-belgi">*</span></legend>
+                    <div class="tanlovlar-guruhi">
+                        <label class="tanlov-elementi">
+                            <input type="radio" name="imtihon_turi" value="ielts_academic" checked required>
+                            <span>IELTS Academic (Universitetlar va magistratura uchun)</span>
+                        </label>
+                        <label class="tanlov-elementi">
+                            <input type="radio" name="imtihon_turi" value="ielts_general">
+                            <span>IELTS General Training (Ish va immigratsiya uchun)</span>
+                        </label>
+                        <label class="tanlov-elementi">
+                            <input type="radio" name="imtihon_turi" value="milliy_bbm">
+                            <span>Milliy BBM / CEFR Sertifikati (O'zbekiston OTMlari uchun)</span>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <!-- 8-maydon: Checkbox guruh -->
+                <fieldset class="forma-fieldset">
+                    <legend>Sizga kerak bo'lgan qo'shimcha xizmatlar (bir nechtasini tanlash mumkin):</legend>
+                    <div class="tanlovlar-guruhi">
+                        <label class="tanlov-elementi">
+                            <input type="checkbox" name="xizmatlar" value="speaking_arena" checked>
+                            <span>Foxy AI Speaking suhbatdoshidan kunlik foydalanish</span>
+                        </label>
+                        <label class="tanlov-elementi">
+                            <input type="checkbox" name="xizmatlar" value="writing_check">
+                            <span>Writing insholarini AI va xalqaro mutaxassis tomonidan tekshirtirish</span>
+                        </label>
+                        <label class="tanlov-elementi">
+                            <input type="checkbox" name="xizmatlar" value="urdu_chegirma">
+                            <span>Urganch davlat universiteti (UrDU) talabasi uchun 25% lik chegirmadan foydalanish</span>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <!-- 9-maydon: Textarea -->
+                <div class="forma-guruh forma-guruh-toliq">
+                    <label for="talaba-izoh">O'zingiz haqingizda qo'shimcha ma'lumot yoki savollaringiz:</label>
+                    <textarea 
+                        id="talaba-izoh" 
+                        name="talaba_izoh" 
+                        rows="4" 
+                        placeholder="Hozirgi tayyorgarlik darajangiz, qaysi qismda qiynalayotganingiz va qo'shimcha istaklaringizni yozib qoldiring..."></textarea>
+                </div>
+
+                <!-- Tugmalar bloki -->
+                <div class="forma-harakatlar">
+                    <button type="reset" class="forma-tozalash-tugma">Tozalash</button>
+                    <!-- A9. button type="submit" -->
+                    <button type="submit" class="forma-tugma">Arizani Yuborish va Sinovdan O'tish &rarr;</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- A2. Aside bo'limi: Aloqa markazi va tezkor savollar -->
+        <aside class="yon-panel">
+            <h3>🏢 Urganch Maslahat Markazimiz Ish Vaqti</h3>
+            <p>
+                Arizani yuborganingizdan so'ng, markaz koordinatori 30 daqiqa ichida siz bilan bog'lanadi. Agar tezkor yordam kerak bo'lsa:
+            </p>
+            <p>
+                <strong>Ish kunlari:</strong> Dushanba &mdash; Shanba, soat 08:30 dan 18:30 gacha.<br>
+                <strong>Ishonch telefoni:</strong> <a href="tel:+998622288000">+998 (62) 228-80-00</a>
+            </p>
+        </aside>
+
+        <!-- Aloqa rekvizitlari bo'limi -->
+        <section id="aloqa-qismi">
+            <h2>Mahalliy Manzil va Bog'lanish</h2>
+            <address>
+                <strong>Bosh O'quv Binosi:</strong> Xorazm viloyati, Urganch shahri, Al-Xorazmiy shoh ko'chasi, 110-uy.<br>
+                <strong>Kafedra:</strong> Dasturiy injiniring kafedrasi, IELTIX AI tadqiqot laboratoriyasi.<br>
+                <strong>Elektron pochta:</strong> <a href="mailto:info@ieltix.uz">info@ieltix.uz</a> &bull; 
+                <strong>Telegram bot:</strong> @IeltixSupportBot
+            </address>
+        </section>
+    </main>
+
+    <!-- B7. Sahifa boshiga fixed harakatlanuvchi tugma -->
+    <a href="#yuqoriga" class="yuqoriga-fixed-tugma" title="Sahifa boshiga qaytish" aria-label="Sahifa boshiga qaytish">&uarr;</a>
+
+    <!-- A1 & B10. Flexbox bilan 2 yoki undan ortiq ustunli Footer -->
+    <footer class="sahifa-footeri">
+        <div class="footer-ichki">
+            <div class="footer-ustun">
+                <h4>IELTIX Ta'lim Platformasi</h4>
+                <p>
+                    Urganch davlat universiteti, Dasturiy injiniring kafedrasi 5-semestr talabasi tomonidan yaratilgan semestr loyihasi.
+                </p>
+            </div>
+
+            <div class="footer-ustun">
+                <h4>Tezkor Havolalar</h4>
+                <ul>
+                    <li><a href="index.html">Bosh sahifa</a></li>
+                    <li><a href="batafsil.html">Batafsil ma'lumotlar</a></li>
+                    <li><a href="aloqa.html">Sinov testiga ro'yxatdan o'tish</a></li>
+                    <li><a href="https://www.cambridgeenglish.org" target="_blank" rel="noopener">Cambridge English Portal &rarr;</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-ustun">
+                <h4>Bog'lanish Ma'lumotlari</h4>
+                <p>Urganch shahri, Al-Xorazmiy shoh ko'chasi 110-uy</p>
+                <p>Email: <a href="mailto:support@ieltix.uz">support@ieltix.uz</a></p>
+                <p>Tel: <a href="tel:+998886603909">+998 (88) 660-39-09</a></p>
+            </div>
+        </div>
+
+        <div class="footer-pastki">
+            <p>&copy;&nbsp;2026 IELTIX Platformasi. Barcha huquqlar qonun bilan himoyalangan.</p>
+            <p>2-Amaliy ish: Semestr loyihasini jadval, forma, media, blok modeli, pozitsiyalash va Flexbox bilan rivojlantirish.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
